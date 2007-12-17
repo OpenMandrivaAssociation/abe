@@ -15,7 +15,6 @@ License:	GPL
 Group:		Games/Arcade
 Summary:	%{Summary}
 BuildRequires:	SDL-devel SDL_mixer-devel X11-devel desktop-file-utils
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 A scrolling, platform-jumping, key-collecting, ancient pyramid
