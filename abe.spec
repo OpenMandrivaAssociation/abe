@@ -37,16 +37,6 @@ rm -rf %{buildroot}
 install -d %{buildroot}%{_gamesdatadir}/%{name}
 cp -a {images,sounds,maps} %{buildroot}%{_gamesdatadir}/%{name}
 
-install -d %{buildroot}%{_menudir}
-cat <<EOF > %{buildroot}%{_menudir}/%{name}
-?package(%{name}):command="%{_gamesbindir}/%{name}" \
-		icon=%{name}.png \
-		needs="x11" \
-		section="More Applications/Games/Arcade" \
-		title="%{Summary}" \
-		longtitle="%{Summary}" \
-		xdg="true"
-EOF
 
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -81,7 +71,6 @@ rm -rf %{buildroot}
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
-%{_menudir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
 %defattr(755,root,root,755)
 %{_gamesbindir}/*
