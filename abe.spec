@@ -11,6 +11,7 @@ Source0:	%{name}-%{version}.tar.bz2
 Source11:	%{name}-16x16.png
 Source12:	%{name}-32x32.png
 Source13:	%{name}-48x48.png
+Patch0:		abe-1.1-fix-str-fmt.patch
 License:	GPL
 Group:		Games/Arcade
 Summary:	%{Summary}
@@ -25,6 +26,7 @@ cool games they missed.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %configure2_5x	--bindir=%{_gamesbindir} \
@@ -48,7 +50,7 @@ Icon=%{name}
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
+Categories=Game;ArcadeGame;
 EOF
 
 install -m644 %{SOURCE11} -D %{buildroot}%{_miconsdir}/%{name}.png
@@ -78,5 +80,3 @@ rm -rf %{buildroot}
 %{_datadir}/applications/mandriva-%{name}.desktop
 %defattr(755,root,root,755)
 %{_gamesbindir}/*
-
-
