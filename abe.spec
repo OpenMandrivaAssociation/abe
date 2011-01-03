@@ -15,7 +15,7 @@ Patch0:		abe-1.1-fix-str-fmt.patch
 License:	GPL
 Group:		Games/Arcade
 Summary:	%{Summary}
-BuildRequires:	SDL-devel SDL_mixer-devel X11-devel desktop-file-utils
+BuildRequires:	SDL-devel SDL_mixer-devel desktop-file-utils
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
