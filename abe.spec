@@ -12,6 +12,7 @@ Source11:	%{name}-16x16.png
 Source12:	%{name}-32x32.png
 Source13:	%{name}-48x48.png
 Patch0:		abe-1.1-fix-str-fmt.patch
+Patch1:		abe-1.1-drop-x-req.patch
 License:	GPL
 Group:		Games/Arcade
 Summary:	%{Summary}
@@ -27,8 +28,10 @@ cool games they missed.
 %prep
 %setup -q
 %patch0 -p0
+%patch1 -p0
 
 %build
+autoreconf -fi
 %configure2_5x	--bindir=%{_gamesbindir} \
 		--with-data-dir=%{_gamesdatadir}/abe
 %make
