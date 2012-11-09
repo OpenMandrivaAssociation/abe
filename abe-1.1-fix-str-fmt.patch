@@ -1,0 +1,11 @@
+--- src/Game.c.str	2010-01-27 18:15:58.000000000 +0100
++++ src/Game.c	2010-01-27 18:16:06.000000000 +0100
+@@ -18,7 +18,7 @@
+   len = strlen(path);
+ 
+   if(1 == version) {
+-    sprintf(path + len, formatted_name);
++    sprintf(path + len, "%s", formatted_name);
+   } else {
+     sprintf(path + len, formatted_name, version);
+   }
