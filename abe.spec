@@ -83,3 +83,66 @@ rm -rf %{buildroot}
 %{_datadir}/applications/mandriva-%{name}.desktop
 %defattr(755,root,root,755)
 %{_gamesbindir}/*
+
+
+%changelog
+* Wed Feb 02 2011 Funda Wang <fwang@mandriva.org> 1.1-8mdv2011.0
++ Revision: 635057
+- add patch
+- drop x req from configure
+- rebuild
+- tighten BR
+
+* Sun Dec 05 2010 Oden Eriksson <oeriksson@mandriva.com> 1.1-7mdv2011.0
++ Revision: 609902
+- rebuild
+
+* Wed Jan 27 2010 Funda Wang <fwang@mandriva.org> 1.1-6mdv2010.1
++ Revision: 497301
+- fix str fmt
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+    - rebuild
+
+* Thu Jun 12 2008 Pixel <pixel@mandriva.com> 1.1-4mdv2009.0
++ Revision: 218439
+- rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - drop old menu
+
+* Thu Dec 20 2007 Olivier Blin <oblin@mandriva.com> 1.1-4mdv2008.1
++ Revision: 135813
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+    - kill desktop-file-validate's 'warning: key "Encoding" in group "Desktop Entry" is deprecated'
+
+
+* Fri Dec 15 2006 Per Øyvind Karlsen <pkarlsen@mandriva.com> 1.1-4mdv2007.0
++ Revision: 97207
+- fix buildrequires
+- add xdg menu to %%files
+- add xdg menu (fixes #26326)
+  cleanups
+- Import abe
+
+* Tue Jun 27 2006 Lenny Cartier <lenny@mandriva.com> 1.1-2mdv2007.0
+- use mkrel
+
+* Mon Mar 07 2005 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.1-1mdk
+- 1.1
+- license changed to GPL
+- drop P0 (fixed upstream)
+
+* Fri Aug 27 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.0-3mdk
+- rebuild for new menu
+
+* Sat Apr 03 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.0-2mdk
+- rebuild
+- fix summary macro to avoid possible conflicts if we were to build debug package
+- fix buildrequires (lib64..)
+- don't bzip2 icons in src.rpm
+
