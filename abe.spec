@@ -1,6 +1,6 @@
 %define	name	abe
 %define	version	1.1
-%define	release	%mkrel 8
+%define release	9
 %define	Summary	Abe's Amazing Adventure!!
 
 Name:		%{name}
