@@ -1,0 +1,61 @@
+diff -Nur abe-1.1/abe.appdata.xml des/abe.appdata.xml
+--- abe-1.1/abe.appdata.xml	1970-01-01 01:00:00.000000000 +0100
++++ des/abe.appdata.xml	2016-08-30 01:30:36.187214280 +0200
+@@ -0,0 +1,29 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!-- Copyright 2016 Ferdinand Thiessen <rpm@fthiessen.de> -->
++<component type="desktop">
++ <id>abe.desktop</id>
++ <metadata_license>CC0-1.0</metadata_license>
++ <project_license>GPL-2.0+</project_license>
++ <name>Abe</name>
++ <summary>Scrolling, platform-jumping, ancient pyramid exploring game</summary>
++ <description>
++  <p>
++    A scrolling, platform-jumping, key-collecting, ancient pyramid exploring game,
++    vaguely in the style of similar games for the Commodore+4.
++  </p>
++  <p>
++    The game is intended to show young people all the cool games they missed.
++  </p>
++ </description>
++ <screenshots>
++  <screenshot type="default">
++   <image>http://abe.sourceforge.net/screen0-4-1.png</image>
++   <caption>Curious Cannons!</caption>
++  </screenshot>
++  <screenshot>
++   <image>http://abe.sourceforge.net/screen2-4-2.png</image>
++   <caption>Bears, oh my!</caption>
++  </screenshot>
++ </screenshots>
++ <url type="homepage">http://abe.sourceforge.net/</url>
++</component>
+diff -Nur abe-1.1/abe.desktop des/abe.desktop
+--- abe-1.1/abe.desktop	1970-01-01 01:00:00.000000000 +0100
++++ des/abe.desktop	2016-08-30 01:30:36.191214310 +0200
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Name=Abe
++GenericName="pyramid exploring game"
++Comment="Abe's Amazing Adventure"
++Exec=abe
++Icon=abe
++Terminal=false
++Type=Application
++Categories=Game;ArcadeGame;
+diff -Nur abe-1.1/Makefile.am des/Makefile.am
+--- abe-1.1/Makefile.am	2005-03-05 17:20:04.000000000 +0100
++++ des/Makefile.am	2016-08-30 01:32:37.172112321 +0200
+@@ -1,2 +1,11 @@
+ SUBDIRS = src
+ 
++desktopdir = $(datadir)/applications
++dist_desktop_DATA = abe.desktop
++
++appdatadir = $(datadir)/appdata
++dist_appdata_DATA = abe.appdata.xml
++
++desktopicondir = $(datadir)/pixmaps
++dist_desktopicon_DATA = images/abe.png
++
